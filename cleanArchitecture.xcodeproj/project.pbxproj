@@ -15,6 +15,11 @@
 		524B834725208C3200078ACD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524B834525208C3200078ACD /* LaunchScreen.storyboard */; };
 		524B835225208C3200078ACD /* cleanArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B835125208C3200078ACD /* cleanArchitectureTests.swift */; };
 		524B835D25208C3200078ACD /* cleanArchitectureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B835C25208C3200078ACD /* cleanArchitectureUITests.swift */; };
+		524B838425208F4400078ACD /* ApplicationBusinessRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B838325208F4400078ACD /* ApplicationBusinessRule.swift */; };
+		524B838925208F6E00078ACD /* EnterpriseBusinessRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B838825208F6E00078ACD /* EnterpriseBusinessRule.swift */; };
+		524B839125208FB700078ACD /* ViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B839025208FB700078ACD /* ViewPresenter.swift */; };
+		524B8396252091AD00078ACD /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B8395252091AD00078ACD /* TimerController.swift */; };
+		525BD8B72520AB2800675ECA /* AppDependencyResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525BD8B62520AB2800675ECA /* AppDependencyResolver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		524B835825208C3200078ACD /* cleanArchitectureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cleanArchitectureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		524B835C25208C3200078ACD /* cleanArchitectureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cleanArchitectureUITests.swift; sourceTree = "<group>"; };
 		524B835E25208C3200078ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		524B838325208F4400078ACD /* ApplicationBusinessRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationBusinessRule.swift; sourceTree = "<group>"; };
+		524B838825208F6E00078ACD /* EnterpriseBusinessRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterpriseBusinessRule.swift; sourceTree = "<group>"; };
+		524B839025208FB700078ACD /* ViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresenter.swift; sourceTree = "<group>"; };
+		524B8395252091AD00078ACD /* TimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
+		525BD8B62520AB2800675ECA /* AppDependencyResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyResolver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +109,11 @@
 		524B833925208C2E00078ACD /* cleanArchitecture */ = {
 			isa = PBXGroup;
 			children = (
-				524B833A25208C2E00078ACD /* AppDelegate.swift */,
-				524B833C25208C2E00078ACD /* SceneDelegate.swift */,
-				524B833E25208C2E00078ACD /* ViewController.swift */,
-				524B834025208C2E00078ACD /* Main.storyboard */,
-				524B834325208C3200078ACD /* Assets.xcassets */,
-				524B834525208C3200078ACD /* LaunchScreen.storyboard */,
+				525BD8B62520AB2800675ECA /* AppDependencyResolver.swift */,
+				524B837925208DE900078ACD /* External */,
+				524B837D25208E1100078ACD /* Adapter */,
+				524B838125208E8F00078ACD /* UseCase */,
+				524B838225208EA900078ACD /* Entity */,
 				524B834825208C3200078ACD /* Info.plist */,
 			);
 			path = cleanArchitecture;
@@ -128,6 +137,92 @@
 			path = cleanArchitectureUITests;
 			sourceTree = "<group>";
 		};
+		524B836D25208CAE00078ACD /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				524B833A25208C2E00078ACD /* AppDelegate.swift */,
+				524B833C25208C2E00078ACD /* SceneDelegate.swift */,
+				524B833E25208C2E00078ACD /* ViewController.swift */,
+				524B834025208C2E00078ACD /* Main.storyboard */,
+				524B834525208C3200078ACD /* LaunchScreen.storyboard */,
+				524B834325208C3200078ACD /* Assets.xcassets */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		524B837725208D0200078ACD /* DB */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		524B837825208D6E00078ACD /* Device */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		524B837925208DE900078ACD /* External */ = {
+			isa = PBXGroup;
+			children = (
+				524B836D25208CAE00078ACD /* UI */,
+				524B837725208D0200078ACD /* DB */,
+				524B837825208D6E00078ACD /* Device */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		524B837D25208E1100078ACD /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				524B837E25208E5500078ACD /* Presenter */,
+				524B837F25208E6400078ACD /* Gateway */,
+				524B838025208E7800078ACD /* Controller */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		524B837E25208E5500078ACD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				524B839025208FB700078ACD /* ViewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		524B837F25208E6400078ACD /* Gateway */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Gateway;
+			sourceTree = "<group>";
+		};
+		524B838025208E7800078ACD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				524B8395252091AD00078ACD /* TimerController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		524B838125208E8F00078ACD /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				524B838325208F4400078ACD /* ApplicationBusinessRule.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		524B838225208EA900078ACD /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				524B838825208F6E00078ACD /* EnterpriseBusinessRule.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +233,7 @@
 				524B833325208C2E00078ACD /* Sources */,
 				524B833425208C2E00078ACD /* Frameworks */,
 				524B833525208C2E00078ACD /* Resources */,
+				525BD8AF2520A18A00675ECA /* swiftformat Run Script */,
 			);
 			buildRules = (
 			);
@@ -253,14 +349,40 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		525BD8AF2520A18A00675ECA /* swiftformat Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "swiftformat Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat --exclude Carthage,Pods --stripunusedargs closure-only --indentcase true --elseposition next-line --comments ignore --disable strongOutlets,trailingCommas,redundantSelf ${SRCROOT}\nelse\n  echo \"swiftformat does not exist\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		524B833325208C2E00078ACD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				525BD8B72520AB2800675ECA /* AppDependencyResolver.swift in Sources */,
+				524B838425208F4400078ACD /* ApplicationBusinessRule.swift in Sources */,
 				524B833F25208C2E00078ACD /* ViewController.swift in Sources */,
 				524B833B25208C2E00078ACD /* AppDelegate.swift in Sources */,
+				524B839125208FB700078ACD /* ViewPresenter.swift in Sources */,
+				524B8396252091AD00078ACD /* TimerController.swift in Sources */,
 				524B833D25208C2E00078ACD /* SceneDelegate.swift in Sources */,
+				524B838925208F6E00078ACD /* EnterpriseBusinessRule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
